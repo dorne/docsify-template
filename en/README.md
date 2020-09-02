@@ -1,6 +1,6 @@
-# 快速开始
+# Getting Started
 
-## 本地运行
+## Preview Doc
 
 ```
 python -m SimpleHTTPServer 3000
