@@ -10,13 +10,13 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css"> -->
 
     <!-- 内网 -->
-    <link rel="stylesheet" href="_media/css/theme-defaults.css">
+    <!-- <link rel="stylesheet" href="_media/css/theme-defaults.css"> -->
 
     <!-- 外网 -->
     <!-- <link rel="stylesheet" id="link-theme" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
 
     <!-- 内网 -->
-    <!-- <link rel="stylesheet" href="_media/css/theme-simple.css"> -->
+    <link rel="stylesheet" href="_media/css/theme-simple.css">
 </head>
 
 <body>
@@ -59,9 +59,15 @@
                         // 初始化完成后调用，只调用一次，没有参数。
 
                         //加载主题文件
-                        var href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css';
+                        //外网
+                        // var href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css';
+                        // 内网
+                        var href = '_media/css/theme-simple.css';
                         if (localStorage.getItem('theme') === 'moon') {
-                            href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css';
+                            //外网
+                            // href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css';
+                            //内网
+                            href = '_media/css/theme-simple-dark.css';
                         }
 
                         var style = document.createElement('link');
@@ -118,13 +124,19 @@
             if ($(this).data('theme') === 'moon') {
                 $(this).data('theme', 'sun')
                 $(this).css('backgroundImage', 'url(/_media/sun.svg)');
-                href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css';
+                //外网
+                //href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css';
+                //内网
+                href = '_media/css/theme-simple-dark.css';
                 localStorage.setItem('theme', 'moon');
 
             } else {
                 $(this).data('theme', 'moon')
                 $(this).css('backgroundImage', 'url(/_media/moon.svg)')
-                href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css';
+                //外网
+                //href = 'https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css';
+                //内网
+                href = '_media/css/theme-simple.css';
                 localStorage.setItem('theme', 'sun');
             }
 
